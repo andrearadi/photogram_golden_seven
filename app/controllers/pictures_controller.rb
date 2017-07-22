@@ -18,6 +18,7 @@ class PicturesController < ApplicationController
     end
     
     def index
+        @listofpics=Photo.all
         render("pic_templates/index.html.erb")
     end
     
@@ -36,14 +37,28 @@ class PicturesController < ApplicationController
     end
     
     def edit_form
+        
+        @photo = Photo.find (the_id_number)
+        
         render("pic_templates/edit_form.html.erb")
     end
     
     def update_row
+        p= Photo.find (the_id_number)
+        p.source = params["the_source"]
+        p.caption = params["the_caption"]
+        p.save
+        
+        @photo = Photo.find (the_id_number)
+        
         render("pic_templates/update_row.html.erb")
     end
     
     def destroy_row
+        
+        @destroypic= Photo.find (the_id_number)
+        @destroypic.destroy 
+        
         render("pic_templates/destroy_row.html.erb")
     end
 
