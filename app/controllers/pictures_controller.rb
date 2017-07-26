@@ -14,6 +14,8 @@ class PicturesController < ApplicationController
         
         @photo_count= Photo.count
         
+        redirect_to("http://localhost:3000/photos/#{@photo.id}")
+        
         render("pic_templates/create_row.html.erb")
     end
     
@@ -61,6 +63,8 @@ class PicturesController < ApplicationController
         
         i= Photo.find_by(params[:id])
         i.destroy 
+        
+        redirect_to("http://localhost:3000/photos/#{@photo.id}")
         
         render("pic_templates/destroy_row.html.erb")
     end
