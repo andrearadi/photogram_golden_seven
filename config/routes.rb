@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
   #HOME
-  get("/", { :controller => "photos", :action => "index" })
+  get("/", { :controller => "pictures", :action => "index" })
   
   
 # CREATE
