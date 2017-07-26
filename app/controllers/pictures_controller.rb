@@ -14,9 +14,9 @@ class PicturesController < ApplicationController
         
         @photo_count= Photo.count
         
-        redirect_to("http://localhost:3000/photos/#{@photo.id}")
+        redirect_to("https://photogram-golden-andrearadi.c9users.io/")
         
-        render("pic_templates/create_row.html.erb")
+        #render("pic_templates/create_row.html.erb")
     end
     
     def index
@@ -64,9 +64,9 @@ class PicturesController < ApplicationController
         i= Photo.find_by(params[:id])
         i.destroy 
         
-        redirect_to("http://localhost:3000/photos/#{@photo.id}")
+        redirect_to("https://photogram-golden-andrearadi.c9users.io/")
         
-        render("pic_templates/destroy_row.html.erb")
+        #render("pic_templates/destroy_row.html.erb")
     end
 
 
