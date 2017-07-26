@@ -18,15 +18,19 @@ class PicturesController < ApplicationController
     end
     
     def index
-        @listofpics=Photo.all
+        @listofpics= Photo.all
         render("pic_templates/index.html.erb")
     end
        
     def show
+        
+        @photo = Photo.find_by({ :id=>params[:id]})
     
-        the_id_number = params["an_id"].to_i
-   
-        Photo.find(the_id_number).source
+        #the_id_number = params["an_id"].to_i
+        #pic= Photo.find(the_id_number)
+        #@the_source= pic.source
+        #@the_caption= pic.caption
+        #Photo.find(the_id_number).source
     
         render("pic_templates/show.html.erb")
     end
