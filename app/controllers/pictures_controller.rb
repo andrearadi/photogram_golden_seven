@@ -24,7 +24,7 @@ class PicturesController < ApplicationController
        
     def show
         
-        @photo = Photo.find_by({ :id=>params[:id]})
+        @photo = Photo.find_by(params[:id])
     
         #the_id_number = params["an_id"].to_i
         #pic= Photo.find(the_id_number)
@@ -37,7 +37,9 @@ class PicturesController < ApplicationController
     
     def edit_form
         
-        @photo = Photo.find (the_id_number)
+         @photo = Photo.find_by(params[:id])
+    
+       # @photo = Photo.find (the_id_number)
         
         render("pic_templates/edit_form.html.erb")
     end
