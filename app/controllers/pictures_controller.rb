@@ -45,19 +45,21 @@ class PicturesController < ApplicationController
     end
     
     def update_row
-        p= Photo.find(the_id_number)
+        p= Photo.find_by(params[:id])
         p.source = params["the_source"]
         p.caption = params["the_caption"]
         p.save
         
-        @photo = Photo.find (the_id_number)
+        @photo = Photo.find_by(params[:id])
+        
+       # @photo = Photo.find (the_id_number)
         
         render("pic_templates/update_row.html.erb")
     end
     
     def destroy_row
         
-        i= Photo.find(the_id_number)
+        i= Photo.find_by(params[:id])
         i.destroy 
         
         render("pic_templates/destroy_row.html.erb")
