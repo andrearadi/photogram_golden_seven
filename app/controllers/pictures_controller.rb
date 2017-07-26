@@ -43,9 +43,9 @@ class PicturesController < ApplicationController
     
        # @photo = Photo.find (the_id_number)
         
-       # render("pic_templates/edit_form.html.erb")
+       render("pic_templates/edit_form.html.erb")
        
-       redirect_to("https://photogram-golden-andrearadi.c9users.io/photos/:id")
+       # redirect_to("https://photogram-golden-andrearadi.c9users.io/photos/:id")
     end
     
     def update_row
