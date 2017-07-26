@@ -21,7 +21,7 @@ class PicturesController < ApplicationController
         @listofpics=Photo.all
         render("pic_templates/index.html.erb")
     end
-    
+       
     def show
     
         the_id_number = params["an_id"].to_i
