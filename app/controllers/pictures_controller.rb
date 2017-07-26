@@ -14,7 +14,7 @@ class PicturesController < ApplicationController
         
         @photo_count= Photo.count
         
-        redirect_to("https://photogram-golden-andrearadi.c9users.io/")
+        redirect_to("https://photogram-golden-andrearadi.c9users.io/photos")
         
         #render("pic_templates/create_row.html.erb")
     end
@@ -64,7 +64,7 @@ class PicturesController < ApplicationController
         i= Photo.find_by(params[:id])
         i.destroy 
         
-        redirect_to("https://photogram-golden-andrearadi.c9users.io/")
+        redirect_to("https://photogram-golden-andrearadi.c9users.io/photos")
         
         #render("pic_templates/destroy_row.html.erb")
     end
