@@ -56,8 +56,10 @@ class PicturesController < ApplicationController
     
     def destroy_row
         
-        @destroypic= Photo.find (the_id_number)
-        @destroypic.destroy 
+        i = Photo.find(params[:id])
+        
+        i= Photo.find (the_id_number)
+        i.destroy 
         
         render("pic_templates/destroy_row.html.erb")
     end
